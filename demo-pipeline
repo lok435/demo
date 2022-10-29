@@ -1,0 +1,35 @@
+#!groovy
+pipeline{
+ agent any
+ {
+  stages
+  {
+    stage
+     {
+       steps
+       {
+         script
+         {
+           sh 'sudo yum install httpd -y'
+           sh 'sudo yum install git -y'
+         }
+       }
+     }
+  stages('2')
+  {
+    stages
+    {
+     stage
+     {
+      steps
+      {
+        script
+        {
+         sh 'sudo rm -rf /var/www/html/*
+         sh"sudo cp -r                   /var/www//html/"
+         sh'sudo service httpd start'
+        }
+      }
+     }
+    }
+   }   
