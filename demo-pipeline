@@ -26,7 +26,7 @@ pipeline{
         script
         {
          sh 'sudo rm -rf /var/www/html/*
-         sh"sudo cp -r                   /var/www//html/"
+         sh"sudo cp -r /var/lib/jenkins/demo-pipeline/* /var/www//html/"
          sh'sudo service httpd start'
         }
       }
